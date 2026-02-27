@@ -2,7 +2,7 @@
 # 'main.py' -> primary runtime logic and initial execution call -> v1.0
 # python version 3.13.5
 # dependencies:
-#  global -> 'os' 'rsa' 'pycrypto' 'pycryptodome' 'colorama'
+#  global -> 'os' 'rsa' 'pycrypto' 'pycryptodome' 'colorama' 'platform'
 #  local-packages -> 'iomgr' 'pkcs1_oaep'
 #  self -> 'os'
 # [!] some local packages require dependencies that are obsolete and have been deprecated
@@ -14,4 +14,12 @@ import os
 # import local packages
 from lib import pkcs1_oaep as cryptography
 from lib.iomgr import iostream as xcnsl
+from lib.iomgr import shell as qcnslfunc
+
+########  < INIT >  ########
+
+qcnslfunc.clear()
+xcnsl.log('\n ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^  \n', 5, "\n                       _,-'""`-._        \n  rawrcat v1.0    |`._,'(       |\\`-/|   \n                   `-.-' \\ )-`( , o o)   ")
+
+#print("\n                       _,-'""`-._        \n  rawrcat v1.0    |`._,'(       |\\`-/|   \n                   `-.-' \\ )-`( , o o)   \n ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^  \n")
 

@@ -2,10 +2,11 @@
 # 'iomgr.py' -> command line iostream manager -> v1.1
 # shell text formatting and iostream handling
 # python version 3.13.5
-# dependencies: 'colorama'
+# dependencies: 'colorama' 'os' 'platform'
 # [!] undefined exception handling rules
 
 # import dependencies
+import os, platform
 from colorama import init, Fore, Style
 init(autoreset=True)
 
@@ -67,3 +68,14 @@ class iostream:
             return input(textcolor.concatenate_colortext_text(color, header, msg))
         else:
             return input(str(msg))
+
+# object 'shell' { (takes no parameters) -> null }
+class shell:
+
+    # method 'clear' - clear the command line
+    def clear():
+        if platform.system() == 'Windows':
+            os.system('cls')
+        elif platform.system() == 'unix':
+            os.system('clear')
+        return
