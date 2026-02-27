@@ -22,7 +22,7 @@ class textcolor:
         elif color == 2:
             return (Style.NORMAL + Fore.GREEN + str(ctext,) + Style.RESET_ALL)
         elif color == 3:
-            return (Style.NORMAL + Fore.BLUE + str(ctext,) + Style.RESET_ALL)
+            return (Style.NORMAL + Fore.CYAN + str(ctext,) + Style.RESET_ALL)
         elif color == 4:
             return (Style.NORMAL + Fore.YELLOW + str(ctext,) + Style.RESET_ALL)
         elif color == 5:

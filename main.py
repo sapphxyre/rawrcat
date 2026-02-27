@@ -18,8 +18,10 @@ from lib.iomgr import shell as xcnslfunc
 
 ########  < INIT >  ########
 
-qcnslfunc.clear()
-xcnsl.log('\n ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^  \n', 5, "\n                       _,-'""`-._        \n  rawrcat v1.0    |`._,'(       |\\`-/|   \n                   `-.-' \\ )-`( , o o)   ")
+def main():
+    xcnslfunc.clear()
+    xcnsl.log('', 3, "\n                       _,-'""`-._        \n  rawrcat v1.0    |`._,'(       |\\`-/|   \n                   `-.-' \\ )-`( , o o)   \n                        ^^^^^^^^^^^^^^   \n")
+    xcnsl.log('initializing...')
 
-#print("\n                       _,-'""`-._        \n  rawrcat v1.0    |`._,'(       |\\`-/|   \n                   `-.-' \\ )-`( , o o)   \n ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^  \n")
 
+main()
