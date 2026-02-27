@@ -14,7 +14,7 @@ import os
 # import local packages
 from lib import pkcs1_oaep as cryptography
 from lib.iomgr import iostream as xcnsl
-from lib.iomgr import shell as qcnslfunc
+from lib.iomgr import shell as xcnslfunc
 
 ########  < INIT >  ########
 
