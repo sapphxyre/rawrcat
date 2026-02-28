@@ -2,14 +2,15 @@
 # 'main.py' -> primary runtime logic and initial execution call -> v1.0
 # python version 3.13.5
 # dependencies:
-#  global -> 'os' 'rsa' 'pycrypto' 'pycryptodome' 'colorama' 'platform'
+#  global -> 'os' 'rsa' 'pycrypto' 'pycryptodome' 'colorama' 'platform' 'pathlib'
 #  local-packages -> 'iomgr' 'pkcs1_oaep'
-#  self -> 'os' 'platform'
+#  self -> 'os' 'platform' 'pathlib'
 # [!] some local packages require dependencies that are obsolete and have been deprecated
 # [!] undefined exception handling rules
 
 # import dependencies
 import os, platform
+from pathlib import Path
 
 # import local packages
 from lib import pkcs1_oaep as cryptography
@@ -26,4 +27,7 @@ xcnsl.log('\n\ninitializing...', 3, "\n                       _,-'""`-._        
 OSTYPE = str(platform.system().lower())
 CWD = os.getcwd()
 xcnsl.log(str('detected ostype \'' + str(OSTYPE) + '\''))
-xcnsl.log(str('cwd = \'' + str(CWD) + '\''))
+
+path = Path(CWD)
+files = list(path.rglob("*.pem"))
+print(files)
