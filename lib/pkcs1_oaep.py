@@ -1,5 +1,5 @@
 # rawrcat v1.0
-# 'pkcs1_oaep.py' -> cryptogtaphic function library -> v1.2
+# 'pkcs1_oaep.py' -> cryptogtaphic function library -> v1.3
 # rsa cryptography via the PKCS1_OAEP cipher method
 # python version 3.13.5
 # dependencies: 'rsa' 'pycrypto' 'pycryptodome'
@@ -7,12 +7,20 @@
 # [!] undefined exception handling rules
 
 # import dependencies
+from pathlib import Path
 from Crypto.PublicKey import RSA
 from Crypto.Cipher import PKCS1_OAEP
 import os
 
 # object 'keyman' { (takes no parameters) -> null }
 class keyman:
+
+    # method 'scandir' - search directory for existing '.pem' files
+    def scandir(dir):
+        files = list(Path(dir).rglob("*.pem"))
+        if len(files) == 0:
+            return False
+        return files
 
     # method 'newkey' - create new rsa key pair and '.pem' files
     def newkey(publicKeyTarget, privateKeyTarget, publicKeyIdentifier, privateKeyIdentifier):
