@@ -1,4 +1,4 @@
-#from ..lib import pkcs1_oaep as testfile
+from ..lib import pkcs1_oaep as testfile
 #from ..lib.iomgr import iostream
 line1 = "        _,-'""`-._        "
 line2 = "   |`._,'(       |\`-/|   "

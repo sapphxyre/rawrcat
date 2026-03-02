@@ -12,6 +12,7 @@
 import os, platform, uuid
 
 # import local packages
+import fsutil as filesystem
 from lib import pkcs1_oaep as cryptography
 from lib.iomgr import iostream as xcnsl
 from lib.iomgr import shell as xcnslfunc
@@ -26,3 +27,4 @@ xcnsl.log('\n\ninitializing...', 3, "\n\n\n                       _,-'""`-._    
 ostype = str(platform.system().lower())
 xcnsl.log(str('ostype = \'' + str(ostype) + '\''))
 
+filesystem.init.keychain()

@@ -9,8 +9,8 @@
 import os, uuid
 
 # import local packages
-from ..lib import pkcs1_oaep as cryptography
-from ..lib.iomgr import iostream as xcnsl
+from lib import pkcs1_oaep as cryptography
+from lib.iomgr import iostream as xcnsl
 
 # object 'init' { (takes no parameters) -> null }
 class init:
