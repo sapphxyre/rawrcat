@@ -24,30 +24,21 @@ class keyman:
 
     # method 'newkey' - create new rsa key pair and '.pem' files
     def newkey(publicKeyTarget, privateKeyTarget, publicKeyIdentifier, privateKeyIdentifier):
+        print('creating keys...')
         key_value = RSA.generate(2048)
         public_key_identifier = str(publicKeyIdentifier)
         private_key_identifier = str(privateKeyIdentifier)
-        if publicKeyIdentifier == privateKeyIdentifier:
-            if publicKeyTarget == privateKeyTarget:
-                public_key_identifier = str("p" + publicKeyIdentifier)
-                private_key_identifier = str("s" + privateKeyIdentifier)
-                print("(!) key identifiers modified to resolve ambiguous filenames in target directory")
         public_key_path = os.path.join(publicKeyTarget, public_key_identifier + '.pem')
         private_key_path = os.path.join(privateKeyTarget, private_key_identifier + '.pem')
-        if os.path.exists(public_key_path) or os.path.exists(private_key_path):
-            onNext = input("(?) overwrite existing keyfile? (y/N) >>> ")
-            if onNext.lower() == 'y':
-                os.remove(public_key_path)
-            else:
-                print("(!) keyfile already exists. key creation aborted")
-                return
         try:
             f = open(public_key_path, 'wb')
             f.write(key_value.publickey().exportKey('PEM'))
             f.close()
+            print('created key [' + public_key_identifier + '] at ..\n  \\.. \'' + public_key_path + '\'')
             f = open(private_key_path, 'wb')
             f.write(key_value.exportKey('PEM'))
             f.close()
+            print('created key [' + private_key_identifier + '] at ..\n  \\.. ' + private_key_path + '\'')
         except:
             print("failed to create keys. check target file permissions.")
         finally:

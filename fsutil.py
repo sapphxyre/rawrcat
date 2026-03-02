@@ -15,15 +15,15 @@ from lib.iomgr import iostream as xcnsl
 # object 'init' { (takes no parameters) -> null }
 class init:
 
-    # attempt to locate *.pem keyfiles
+    # method 'keychain' - attempt to locate *.pem keyfiles
     def keychain():
         if cryptography.keyman.scandir(os.getcwd()) == False:
-            xcnsl.log('no keys were found in the current directory or its subdirectories\n ..\\  ' + str(os.getcwd()))
+            xcnsl.log('no keys were found in the current directory or its subdirectories\n \\..  ' + str(os.getcwd()))
             keypath = xcnsl.update('set key file target directory or press <enter> to create a new rsa key pair')
             if keypath == True:
-                xcnsl.log('', 5, 'creating new keys:')
-                publickey_path = xcnsl.input('set public key target')
-                privatekey_path = xcnsl.input('set private key target')
+                xcnsl.log('', 5, 'create new keys:')
+                publickey_path = xcnsl.input(' set public key target or press <enter> to use the current directory\n')
+                privatekey_path = xcnsl.input(' set private key target or press <enter> to use the current directory\n')
                 cryptography.keyman.newkey(publickey_path, privatekey_path, uuid.uuid4().hex, uuid.uuid4().hex)
             else:
                 if os.path.exists(keypath):
